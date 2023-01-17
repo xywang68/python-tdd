@@ -2,6 +2,13 @@ import pytest
 
 from blackjack.common import card_score
 
+# console output enabled by --capture=no (pytest.ini)
+print("\n")
+print("Report Note:")
+print("\t1. the 1st test of each test function should be XFAIL")
+print("\t2. there should NOT be any xpassed case")
+print("\n")
+
 # test two cards positive
 @pytest.mark.parametrize("cards, score", [
     # xfail test to proof the test_two_cards() function can catch expected failure
