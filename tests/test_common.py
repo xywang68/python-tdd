@@ -5,8 +5,9 @@ from blackjack.common import card_score
 # console output enabled by --capture=no (pytest.ini)
 print("\n")
 print("Report Note:")
-print("\t1. the 1st test of each test function should be XFAIL")
+print("\t1. the 1st test of each test function should be XFAIL to proof it can catch failure")
 print("\t2. there should NOT be any xpassed case")
+print("\t3. the statement coverage of the target blackjack.common.py should be 100%")
 print("\n")
 
 # test two cards positive
