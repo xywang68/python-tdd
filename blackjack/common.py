@@ -1,14 +1,14 @@
 def card_score(cards):
 
     if type(cards) is not str:
-        raise TypeError("cards should be of string type, got: cards: {}, type: {}", cards, type(cards))
+        raise TypeError("cards should be of string type, got: cards: {}, type: {}".format(cards, type(cards)))
 
     if len(cards) < 2:
-        raise ValueError("cards should have at least 2 cards, got: cards: {}, len: {}", cards, len(cards))
+        raise ValueError("cards should have at least 2 cards, got: cards: {}, len: {}".format(cards, len(cards)))
 
     valid_cards = "23456789XJQKA"
     if len([b for b in cards if b not in valid_cards]):
-        raise ValueError("cards should be in valid range {}, got {}", valid_cards, cards)
+        raise ValueError("cards should be in valid range {}, got {}".format(valid_cards, cards))
 
     numbers = [c for c in cards if c in "23456789"]
     faces = [c for c in cards if c in "XJQK"]
