@@ -4,6 +4,8 @@ from blackjack.common import card_score
 
 # test two cards positive
 @pytest.mark.parametrize("cards, score", [
+    # xfail test to proof the test_two_cards() function can catch expected failure
+    pytest.param("23", 0, marks=pytest.mark.xfail),
     ("JK", 20),
     ("78", 15),
     ("7K", 17),
@@ -16,6 +18,8 @@ def test_two_cards(cards, score):
 
 # test more cards positive
 @pytest.mark.parametrize("cards, score", [
+    # xfail test to proof the test_more_cards() function can catch expected failure
+    pytest.param("234", 0, marks=pytest.mark.xfail),
     ("JKA", 21),
     ("78X", 0),
     ("7KAAA", 20),
@@ -28,6 +32,7 @@ def test_more_cards(cards, score):
 
 # test rasie error if cards type is wrong
 @pytest.mark.parametrize("cards", [
+    pytest.param("234", marks=pytest.mark.xfail),
     (12),
     (["A"])
     ])
@@ -38,6 +43,7 @@ def test_raise_type_error_if_cards_type_is_wrong(cards):
 
 # test raise error if less than two cards
 @pytest.mark.parametrize("cards", [
+    pytest.param("22", marks=pytest.mark.xfail),
     ("X"),
     ("2")
     ])
@@ -48,6 +54,7 @@ def test_raise_value_error_if_cards_has_only_1_card(cards):
 
 # test raise error of cards contain invalid card
 @pytest.mark.parametrize("cards", [
+    pytest.param("22", marks=pytest.mark.xfail),
     ("2A1"),
     ("10")
     ])
