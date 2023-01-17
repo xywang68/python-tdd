@@ -1,10 +1,18 @@
 # blackjack
 
-A pet project to exercise pytest and pytest-cov
+A pet project to exercise:
+
+    * pytest
+    * pytest-cov
+    * test package in development mode
+    * freeze package
+    * create dist package
+    * test dist package
+
 
 #### python venv
 
-```shell \tiny
+```shell
 (shell)$ source python-venv/bin/activate
 (venv)$ python -m pip install -r requirements.txt
 ```
@@ -18,7 +26,44 @@ A pet project to exercise pytest and pytest-cov
 
 #### pytest-cov
 
-```shell \tiny
+```shell
 (venv)$ pytest --cov blackjack --cov-report=term-missing
+
+```
+
+#### test package in development mode
+
+```shell
+(venv)$ python setup.py develop
+(venv)$ python
+>>> from blackjack.common import card_score
+>>> card_score("JA")
+21
+>>>
+
+```
+
+#### freeze package
+```shell
+ (venv)$ python -m pip freeze | tee > requirements.txt
+ 
+ ```
+
+ #### create dist package
+ ```shell
+ # phthon -m pip install wheel if dist_wheel is not recognized
+ (venv)$ python setup.py dist_wheel
+ 
+ ```
+
+ #### test dist package
+ ```shell
+ (venv)$ deactivate
+ (shell)$ python3 -m pip install dist/blackjack-0.0.1-py2.py3-none-any.whl
+ (shell)$ python3
+>>> from blackjack.common import card_score
+>>> card_score("JA")
+21
+>>>
 
 ```
