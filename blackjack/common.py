@@ -1,3 +1,8 @@
+valid_cards = "23456789XJQKA"
+
+def return_valid_cards():
+    return valid_cards
+
 def card_score(cards):
 
     if type(cards) is not str:
@@ -6,7 +11,6 @@ def card_score(cards):
     if len(cards) < 2:
         raise ValueError("cards should have at least 2 cards, got: cards: {}, len: {}".format(cards, len(cards)))
 
-    valid_cards = "23456789XJQKA"
     if len([b for b in cards if b not in valid_cards]):
         raise ValueError("cards should be in valid range {}, got {}".format(valid_cards, cards))
 
