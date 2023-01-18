@@ -51,8 +51,8 @@ A pet project to exercise:
 
  #### create dist package
  ```shell
- # phthon -m pip install wheel if dist_wheel is not recognized
- (venv)$ python setup.py dist_wheel
+ # python -m pip install wheel if bdist_wheel is not recognized
+ (venv)$ python setup.py bdist_wheel
  
  ```
 
