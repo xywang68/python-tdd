@@ -1,6 +1,7 @@
 import pytest
 
 from blackjack.common import return_valid_cards
+from blackjack.common import return_valid_suits
 from blackjack.common import card_score
 
 # console output enabled by --capture=no (pytest.ini)
@@ -21,6 +22,17 @@ def test_return_valid_cards(test_cards):
     return_value = return_valid_cards()
     assert type(return_value) == str 
     assert return_value == test_cards
+
+# test return_valid_suits returns the expected suits
+my_valid_suits_for_test = "CDHS"
+@pytest.mark.parametrize("test_suits", [
+    pytest.param("", marks=pytest.mark.xfail),
+    my_valid_suits_for_test
+])
+def test_return_valid_suits(test_suits):
+    return_value = return_valid_suits()
+    assert type(return_value) == str 
+    assert return_value == test_suits
 
 # test two cards positive
 @pytest.mark.parametrize("cards, score", [

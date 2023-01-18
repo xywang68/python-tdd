@@ -1,7 +1,11 @@
 valid_cards = "23456789XJQKA"
+valid_suits = "CDHS"
 
 def return_valid_cards():
     return valid_cards
+
+def return_valid_suits():
+    return valid_suits
 
 def card_score(cards):
 
