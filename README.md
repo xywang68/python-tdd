@@ -14,7 +14,7 @@ A pet project to exercise:
 
 ```shell
 (shell)$ source python-venv/bin/activate
-(venv)$ python -m pip install -r requirements.txt
+(venv)$ python3 -m pip install -r requirements.txt
 ```
 
 #### pytest
@@ -34,8 +34,8 @@ A pet project to exercise:
 #### test package in development mode
 
 ```shell
-(venv)$ python setup.py develop
-(venv)$ python
+(venv)$ python3 setup.py develop --user
+(venv)$ python3
 >>> from blackjack.common import card_score
 >>> card_score("JA")
 21
@@ -45,14 +45,14 @@ A pet project to exercise:
 
 #### freeze package
 ```shell
- (venv)$ python -m pip freeze | tee > requirements.txt
+ (venv)$ python3 -m pip freeze | tee > packageing.txt
  
  ```
 
  #### create dist package
  ```shell
  # python -m pip install wheel if bdist_wheel is not recognized
- (venv)$ python setup.py bdist_wheel
+ (venv)$ python3 setup.py bdist_wheel
  
  ```
 
