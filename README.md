@@ -70,6 +70,6 @@ A pet project to exercise:
 
 #### Automated Github Action
 
-    pytest coverage is run, passing criteria is set in .coveragerc
-    It requires all tests are passing and 100% coverage is achieved.
+    A github action yaml file is in pace to run pytest coverage.
+    Passing criteria with 100% test pass and 100% code coverage are set in .coveragerc
     PR with any failure will be blocked. 
