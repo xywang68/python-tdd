@@ -10,16 +10,22 @@ A pet project to exercise:
     * test dist package
 
 
-#### python venv
+#### python3 virtual env
 
 ```shell
-(shell)$ source python-venv/bin/activate
-(venv)$ python3 -m pip install -r requirements.txt
+(shell)$ python3 -m venv python3-venv
+(shell)$ source python3-venv/bin/activate
+```
+Once inside the venv python3 will be the default version
+```
+(venv)$ python --version
+Python 3.10.6
 ```
 
 #### pytest
 
 ```shell \tiny
+(venv)$ python -m pip install -r requirements.txt
 (venv)$ pytest --verbose
 
 ```
@@ -34,8 +40,8 @@ A pet project to exercise:
 #### test package in development mode
 
 ```shell
-(venv)$ python3 setup.py develop --user
-(venv)$ python3
+(venv)$ python setup.py develop --user
+(venv)$ python
 >>> from blackjack.common import card_score
 >>> card_score("JA")
 21
@@ -45,22 +51,23 @@ A pet project to exercise:
 
 #### freeze package
 ```shell
- (venv)$ python3 -m pip freeze | tee > packageing.txt
+ (venv)$ python -m pip freeze | tee > packageing.txt
  
  ```
 
  #### create dist package
  ```shell
- # python -m pip install wheel if bdist_wheel is not recognized
- (venv)$ python3 setup.py bdist_wheel
- 
+ (venv)$ python setup.py bdist_wheel
+ # run "python -m pip install wheel" if bdist_wheel is not recognized
+ (venv)$ python -m pip install wheel
  ```
+ A wheel file will be produced in the dist/ folder
 
  #### test dist package
  ```shell
  (venv)$ deactivate
- (shell)$ python3 -m pip install dist/blackjack-0.0.1-py2.py3-none-any.whl
- (shell)$ python3
+ (shell)$ python -m pip install dist/blackjack-0.0.1-py2.py3-none-any.whl
+ (shell)$ python
 >>> from blackjack.common import card_score
 >>> card_score("JA")
 21
