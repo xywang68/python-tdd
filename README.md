@@ -1,4 +1,4 @@
-# blackjack
+# Python TDD
 
 A pet project to exercise:
 
@@ -67,3 +67,9 @@ A pet project to exercise:
 >>>
 
 ```
+
+#### Automated Github Action
+
+    pytest coverage is run, passing criteria is set in .coveragerc
+    It requires all tests are passing and 100% coverage is achieved.
+    PR with any failure will be blocked. 
