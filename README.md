@@ -51,7 +51,7 @@ Python 3.10.6
 
 #### freeze package
 ```shell
- (venv)$ python -m pip freeze | tee > packageing.txt
+ (venv)$ python -m pip freeze | tee > packaging.txt
  
  ```
 
