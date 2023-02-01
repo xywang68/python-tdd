@@ -78,5 +78,5 @@ Python 3.10.6
 #### Automated Github Action
 
     A github action yaml file is in pace to run pytest coverage.
-    Passing criteria with 100% test pass and 100% code coverage are set in .coveragerc
-    PR with any failure will be blocked. 
+    Passing criteria with 100% test pass and 100% code coverage are set in .coveragerc.
+    PR will be blocked if any of the test passing and the code coverage criterias is not met. 
