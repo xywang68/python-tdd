@@ -1,6 +1,13 @@
 [run]
+branch = True
 omit = tests/*
+source =
+    blackjack/
+    prime/
+    app/
 
 [report]
 fail_under = 100
 show_missing = true
+exclude_lines =
+    if __name__ == .__main__.:
