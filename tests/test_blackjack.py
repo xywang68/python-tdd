@@ -4,14 +4,6 @@ from blackjack.common import return_valid_cards
 from blackjack.common import return_valid_suits
 from blackjack.common import card_score
 
-# console output enabled by --capture=no (pytest.ini)
-print("\n")
-print("Report Note:")
-print("\t1. the 1st test of each test function should be XFAIL to proof it can catch failure")
-print("\t2. there should NOT be any xpassed case")
-print("\t3. the statement coverage of the target blackjack.common.py should be 100%")
-print("\n")
-
 # test return_valid_cards returns the expected cards
 my_valid_cards_for_test = "23456789XJQKA"
 @pytest.mark.parametrize("test_cards", [
