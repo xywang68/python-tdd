@@ -1,6 +1,8 @@
 import math
 
 def is_prime(num):
+    if num > 9999999900000001:
+        raise ValueError("Input number is too large for this implementation")
     if num < 2:
         return False
     if num == 2:

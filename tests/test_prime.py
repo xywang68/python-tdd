@@ -15,6 +15,17 @@ from prime.check_prime import get_primes_from_list
 def test_is_prime(num, result):
     assert is_prime(num) == result
 
+# test it can find its largest prime
+def test_largest_prime():
+    num = 9999999900000001
+    assert is_prime(num) == True
+
+# test it can rasie error if input is too large
+def test_raise_value_error():
+    num = 9999999900000003
+    with pytest.raises(ValueError):
+        is_prime(num)
+
 # test get_primes_from_list
 @pytest.mark.parametrize("num_list, result", [
     # xfail test to proof the test_get_primes_from_list() function can catch expected failure
